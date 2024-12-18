@@ -1,0 +1,15 @@
+#register {
+  display: flex;
+  direction: row;
+}
+.inp{
+
+}
+#chnBg {
+  display: flex;
+  flex-direction: column;
+}
+#n {
+  margin: 200px;
+  align-items: flex-end;
+}
