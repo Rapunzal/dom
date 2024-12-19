@@ -1,3 +1,4 @@
+const back = document.getElementById("back");
 const form = document.querySelector("form");
 const title = form.elements["title"];
 const author = form.elements["author"];
@@ -7,7 +8,15 @@ submitBtn.addEventListener("click", addBook);
 const tableDiv = document.createElement("div");
 const table = createTable("Title", "Author", "ISBN");
 tableDiv.appendChild(table);
+const tblDiv = document.getElementById("tblDiv");
 tblDiv.appendChild(tableDiv);
+
+back.addEventListener("click", goBack);
+back.classList.add("backButton");
+
+function goBack(e) {
+  window.history.back();
+}
 
 function addBook(event) {
   console.log(event);
@@ -63,7 +72,7 @@ function addRowToTable(table, title, author, isbn) {
   tr.classList.add("trclass");
   console.log(table, "add row to table");
   console.log(JSON.parse(localStorage.getItem("list")));
-
+  //del();
   return table;
 }
 
@@ -83,13 +92,20 @@ function changeBgColor() {
   }
 }
 
-const deleteBtn = document.getElementsByClassName("delete");
-
-for (let i = 0; i < deleteBtn.length; i++) {
-  deleteBtn[i].addEventListener("click", deleteRecord);
-}
 //deleteBtn.addEventListener("click", deleteRecord);
 
 function deleteRecord(event) {
-  console.log(event.target);
+  console.log(event.target, "====enet target");
+  if (event.target.innerHTML === "-") {
+    console.log(event.target.parentElement.parentElement.remove(), " parent");
+  }
 }
+function del() {
+  console.log("---------hi");
+  const deleteBtn = document.querySelectorAll(".delete");
+  console.log(deleteBtn);
+  for (let i = 0; i < deleteBtn.length; i++) {
+    deleteBtn[i].addEventListener("click", deleteRecord);
+  }
+}
+tableDiv.addEventListener("click", deleteRecord);
