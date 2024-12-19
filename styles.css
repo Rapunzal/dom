@@ -1,15 +1,11 @@
-#register {
+#app {
   display: flex;
-  direction: row;
+  justify-content: center;
 }
-.inp{
-
+form {
+  border: 1px solid black;
 }
-#chnBg {
+form div {
   display: flex;
-  flex-direction: column;
-}
-#n {
-  margin: 200px;
-  align-items: flex-end;
+  justify-content: center;
 }

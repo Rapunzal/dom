@@ -3,37 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Book Keeper</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="chnBg">
-      <div id="n">
-        <button type="button">Change Background</button>
-      </div>
+    <div id="app">
+      <h1>Book Keeper</h1>
     </div>
-    <div id="app"></div>
-    <div id="register">
-      <h1>Register</h1>
+    <div id="form">
       <form>
-        <div >
-          <label>Username: </label>
-          <input type="text" name="username" required />
+        <div>
+          <label>Book Title </label>
+          <input type="text" name="title" />
         </div>
         <div>
-          <label>Password:</label>
-          <input type="password" name="password" />
+          <label>Book Author </label>
+          <input type="text" name="author" />
         </div>
         <div>
-          <label>Repeat Password:</label>
-          <input type="password" name="repeatpassword" />
+          <label>ISBN</label>
+          <input type="text" name="isbn" />
         </div>
         <div>
-          <label>Email:</label>
-          <input type="email" name="email" />
-        </div>
-        <div>
-          <button type="submit" class="btn">Register</button>
+          <button type="submit">Add Book</button>
         </div>
       </form>
     </div>
