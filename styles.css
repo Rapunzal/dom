@@ -4,10 +4,10 @@
 }
 #app {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 form {
-  border: 1px solid black;
+  border: 0.5px solid black;
   padding: 10px;
 }
 form div {
@@ -16,7 +16,7 @@ form div {
   padding: 10px;
 }
 form input {
-  padding: 0px 20px;
+  padding: 0px 5px;
   margin: 0px 5px;
   width: 250px;
   height: 30px;
@@ -36,9 +36,32 @@ form button {
   border-radius: 8px;
 }
 .tbl {
-  border: 1px solid gray;
+  margin-top: 25px;
+  border: 0.2px solid gray;
+  width: 600px;
+  border-collapse: collapse;
+  text-align: center;
+}
+.trclass td,
+.trclass tr,
+.trclass th {
+  border: 0.2px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
 }
 #tblDiv {
   display: flex;
   justify-content: center;
+}
+#toggle {
+  display: flex;
+  justify-content: flex-end;
+}
+#toggle button {
+  background-color: lightblue;
+  padding: 5px 15px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: white;
 }
