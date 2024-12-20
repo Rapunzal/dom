@@ -14,7 +14,8 @@ tblDiv.appendChild(tableDiv);
 back.addEventListener("click", goBack);
 back.classList.add("backButton");
 
-function goBack(e) {
+function goBack() {
+  console.log("hey");
   window.history.back();
 }
 
@@ -107,8 +108,8 @@ function addRowToTable(table, title, author, isbn) {
   const td2 = document.createElement("td");
   td2.textContent = isbn;
   const td3 = document.createElement("td");
-  td3.innerHTML = `<button class="delete">-</button>`;
-
+  //   td3.innerHTML = `<button class="delete">-</button>`;
+  td3.innerHTML = `<i class="fa fa-trash-o delete" style="font-size:24px"></i>`;
   table.appendChild(tr);
   tr.appendChild(td);
   tr.appendChild(td1);
@@ -137,21 +138,23 @@ function changeBgColor(event) {
   } else if (event.target.classList.contains("light")) {
     event.target.classList.remove("light");
     event.target.classList.add("dark");
-    document.body.style.backgroundColor = "darkgray";
+    document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
   }
 }
 
 function deleteRecord(event) {
-  console.log(event.target, "====enet target");
-  if (event.target.innerHTML === "-") {
-    console.log(event.target.parentElement.parentElement.remove(), " parent");
-  }
+  console.log(event.target.textContent, "====enet target");
+  //if (event.target.innerHTML === "-") {
+  console.log(event.target.parentElement.parentElement, " parent");
+  event.target.parentElement.parentElement.remove();
+  //}
 }
 function del() {
   console.log("---------hi");
   const deleteBtn = document.querySelectorAll(".delete");
   console.log(deleteBtn);
+  //Iterate over a collection of elements to accomplish some task.
   for (let i = 0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener("click", deleteRecord);
   }
@@ -167,3 +170,20 @@ function addTemplate() {
   frm.innerHTML = clone.innerHTML;
 }
 addTemplate();
+
+// window.setInterval(() => {
+//   console.log("hiiii");
+// }, 3000);
+//Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.).
+
+const list = ["First Book", "Second Book"];
+
+function defineRelationShip() {
+  const node = document.querySelector("#first ul");
+  console.log(node);
+  console.log(node.firstChild, " first child");
+  console.log(node.lastChild, " last child");
+  console.log(node.parentNode);
+  console.log(node.nextElementSibling);
+}
+defineRelationShip();

@@ -6,11 +6,12 @@
     <title>Book Keeper</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <input type="button" value="Back" id="back" />
+   
     <div id="app">
-      <div></div>
+      <div> <input type="button" value="Back" id="back" /></div>
       <h1>Book Keeper</h1>
       <div id="toggle">
         <button type="button" class="light">Change Theme</button>
@@ -18,25 +19,30 @@
     </div>
 
     <div id="form">
-      <div>
+      <div style="width:33%;color: gray;" id="first">
+        <ul>
+            <li>First Book</li>
+            <li>Second Book</li>
+            <li>Third Book</li>
+        </ul>
         <template id="bookTemplate">
           <h3>Clone Node Demonstration</h3>
           <p>Lorem ipsum, dolor sit <br>amet consectetur adipisicing.</p>
-          <!-- <img src="/images/books.jpg" width="250px" height="250px" style="border-radius: 100%;"/> -->
+          <img src="/images/books.jpg" width="250px" height="250px" style="border-radius: 100%;"/>
         </template>
       </div>
-      <div>
+      <div style="width:33%">
         <form>
           <div>
-            <label>Book Title </label>
+            <label>Book Title: </label>
             <input type="text" name="title" required />
           </div>
           <div>
-            <label>Book Author </label>
+            <label>Book Author: </label>
             <input type="text" name="author" required />
           </div>
           <div>
-            <label>ISBN</label>
+            <label>ISBN:</label>
             <input type="text" name="isbn" />
           </div>
           <div>
@@ -45,6 +51,6 @@
         </form>
       <div id="tblDiv"></div>
     </div>
-    <div id="cloneTemplate"></div>
+    <div id="cloneTemplate" style="width:33%;text-align:center;"></div>
   </body>
 </html>
