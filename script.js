@@ -18,13 +18,59 @@ function goBack(e) {
   window.history.back();
 }
 
+//window.alert("Welcome to Book Keeper!!");
+let w = window.innerWidth;
+console.log(w);
+
 function addBook(event) {
   console.log(event);
-  console.log(title.value);
-  console.log(author.value);
-  console.log(isbn.value);
+  const titleVal = validateTitle();
+  if (titleVal === false) {
+    event.returnValue = false;
+    return false;
+  }
+  const authorVal = validateAuthor();
+  if (authorVal === false) {
+    event.returnValue = false;
+    return false;
+  }
+  const isbnVal = validateISBN();
+  if (isbnVal === false) {
+    event.returnValue = false;
+    return false;
+  }
+
   addRowToTable(table, title.value, author.value, isbn.value);
   event.preventDefault();
+}
+
+function validateTitle() {
+  if (title.value == "") {
+    alert("Please provide book title");
+    title.focus();
+    return false;
+  }
+  return title.value;
+}
+
+function validateAuthor() {
+  console.log("author");
+  if (author.value == "") {
+    alert("Please provide book author");
+    author.focus();
+    return false;
+  }
+  return author.value;
+}
+
+function validateISBN() {
+  console.log("isbn");
+  if (isbn.value == "") {
+    alert("Please provide book ISBN");
+    isbn.focus();
+    return false;
+  }
+  return isbn.value;
 }
 
 function createTable(title, author, isbn) {
@@ -80,16 +126,30 @@ const toggleBg = document.getElementById("toggle");
 
 toggleBg.addEventListener("click", changeBgColor);
 
-function changeBgColor() {
-  const bgColor = document.body.style.backgroundColor;
-  const colour = document.body.style.color;
-  if (bgColor === "black" && colour === "white") {
+function changeBgColor(event) {
+  console.log(event.target);
+  if (event.target.classList.contains("dark")) {
+    console.log(event.target);
+    event.target.classList.add("light");
+    event.target.classList.remove("dark");
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
-  } else {
+  } else if (event.target.classList.contains("light")) {
+    event.target.classList.remove("light");
+    event.target.classList.add("dark");
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
   }
+
+  //   const bgColor = document.body.style.backgroundColor;
+  //   const colour = document.body.style.color;
+  //   if (bgColor === "black" && colour === "white") {
+  //     document.body.style.backgroundColor = "white";
+  //     document.body.style.color = "black";
+  //   } else {
+  //     document.body.style.backgroundColor = "black";
+  //     document.body.style.color = "white";
+  //   }
 }
 
 //deleteBtn.addEventListener("click", deleteRecord);
