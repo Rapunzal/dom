@@ -137,22 +137,10 @@ function changeBgColor(event) {
   } else if (event.target.classList.contains("light")) {
     event.target.classList.remove("light");
     event.target.classList.add("dark");
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "darkgray";
     document.body.style.color = "white";
   }
-
-  //   const bgColor = document.body.style.backgroundColor;
-  //   const colour = document.body.style.color;
-  //   if (bgColor === "black" && colour === "white") {
-  //     document.body.style.backgroundColor = "white";
-  //     document.body.style.color = "black";
-  //   } else {
-  //     document.body.style.backgroundColor = "black";
-  //     document.body.style.color = "white";
-  //   }
 }
-
-//deleteBtn.addEventListener("click", deleteRecord);
 
 function deleteRecord(event) {
   console.log(event.target, "====enet target");
@@ -169,3 +157,13 @@ function del() {
   }
 }
 tableDiv.addEventListener("click", deleteRecord);
+
+//HTML templating with the cloneNode method to create templated content.
+
+function addTemplate() {
+  const template = document.getElementById("bookTemplate");
+  const clone = template.cloneNode(true);
+  const frm = document.getElementById("cloneTemplate");
+  frm.innerHTML = clone.innerHTML;
+}
+addTemplate();

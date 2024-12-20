@@ -1,6 +1,6 @@
 #form {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 #app {
   display: flex;
@@ -58,7 +58,7 @@ form button {
   justify-content: flex-end;
 }
 #toggle button {
-  background-color: lightblue;
+  background-color: violet;
   padding: 5px 15px;
   height: 30px;
   border: none;

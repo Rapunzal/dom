@@ -18,24 +18,33 @@
     </div>
 
     <div id="form">
-      <form>
-        <div>
-          <label>Book Title </label>
-          <input type="text" name="title" required />
-        </div>
-        <div>
-          <label>Book Author </label>
-          <input type="text" name="author" required />
-        </div>
-        <div>
-          <label>ISBN</label>
-          <input type="text" name="isbn" />
-        </div>
-        <div>
-          <button type="submit" id="btn">Add Book</button>
-        </div>
-      </form>
+      <div>
+        <template id="bookTemplate">
+          <h3>Clone Node Demonstration</h3>
+          <p>Lorem ipsum, dolor sit <br>amet consectetur adipisicing.</p>
+          <!-- <img src="/images/books.jpg" width="250px" height="250px" style="border-radius: 100%;"/> -->
+        </template>
+      </div>
+      <div>
+        <form>
+          <div>
+            <label>Book Title </label>
+            <input type="text" name="title" required />
+          </div>
+          <div>
+            <label>Book Author </label>
+            <input type="text" name="author" required />
+          </div>
+          <div>
+            <label>ISBN</label>
+            <input type="text" name="isbn" />
+          </div>
+          <div>
+            <button type="submit" id="btn">Add Book</button>
+          </div>
+        </form>
+      <div id="tblDiv"></div>
     </div>
-    <div id="tblDiv"></div>
+    <div id="cloneTemplate"></div>
   </body>
 </html>
