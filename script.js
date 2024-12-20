@@ -4,7 +4,8 @@ const title = form.elements["title"];
 const author = form.elements["author"];
 const isbn = form.elements["isbn"];
 const submitBtn = document.getElementById("btn");
-submitBtn.addEventListener("click", addBook);
+form.addEventListener("submit", addBook);
+//submitBtn.addEventListener("click", addBook);
 const tableDiv = document.createElement("div");
 const table = createTable("Title", "Author", "ISBN");
 tableDiv.appendChild(table);
@@ -21,10 +22,12 @@ function goBack() {
 
 //window.alert("Welcome to Book Keeper!!");
 let w = window.innerWidth;
+let h = window.innerHeight;
 console.log(w);
+console.log(h);
 
 function addBook(event) {
-  console.log(event);
+  console.log(event, " event");
   const titleVal = validateTitle();
   if (titleVal === false) {
     event.returnValue = false;
@@ -50,6 +53,8 @@ function validateTitle() {
     alert("Please provide book title");
     title.focus();
     return false;
+  } else if (title.value.length < 3) {
+    window.alert("Title should be atleast 3 characters long");
   }
   return title.value;
 }
@@ -99,7 +104,7 @@ const bookList = [];
 function addRowToTable(table, title, author, isbn) {
   const temp = { title: title, author: author, isbn: isbn };
   bookList.push(temp);
-  localStorage.setItem("list", JSON.stringify(bookList));
+  //localStorage.setItem("list", JSON.stringify(bookList));
   const tr = document.createElement("tr");
   const td = document.createElement("td");
   td.textContent = title;
@@ -118,7 +123,7 @@ function addRowToTable(table, title, author, isbn) {
   table.appendChild(tr);
   tr.classList.add("trclass");
   console.log(table, "add row to table");
-  console.log(JSON.parse(localStorage.getItem("list")));
+  //console.log(JSON.parse(localStorage.getItem("list")));
   //del();
   return table;
 }
@@ -144,16 +149,15 @@ function changeBgColor(event) {
 }
 
 function deleteRecord(event) {
-  console.log(event.target.textContent, "====enet target");
+  // console.log(event.target.textContent, "====enet target");
   //if (event.target.innerHTML === "-") {
   console.log(event.target.parentElement.parentElement, " parent");
   event.target.parentElement.parentElement.remove();
   //}
 }
 function del() {
-  console.log("---------hi");
   const deleteBtn = document.querySelectorAll(".delete");
-  console.log(deleteBtn);
+
   //Iterate over a collection of elements to accomplish some task.
   for (let i = 0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener("click", deleteRecord);

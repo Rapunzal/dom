@@ -7,4 +7,8 @@
 - Demonstrate proficiency with event-driven programming and DOM events.
 - Implement basic form validation using any combination of built-in HTML validation attributes and DOM-event-driven JavaScript validation.
 
+## Technologies Used
 
+- HTML
+- CSS
+- Javascript
