@@ -16,14 +16,16 @@ form div {
   padding: 10px;
 }
 form input {
+  width: 100%;
   padding: 0px 5px;
   margin: 0px 5px;
-  width: 250px;
+  width: 500px;
   height: 30px;
   border-radius: 5px;
   border: 1px solid gray;
 }
 form label {
+  width: 200px;
   padding: 0px 15px;
   margin: 0px 5px;
   font-size: large;
