@@ -13,24 +13,25 @@
 - CSS
 - Javascript
 
-## Output
-
-![alt text](/images/image.png)
-
 ## Features
 
 This is a Book Keeper Project to maintain a list of books.Features of the project include:-
 
 - Creating table for list of books dynamically.
-- Displays list of project in table format
-- Appending list of books to table.
-- Changing the background to dark and light mode.
-- Use of BOM method back and property innerWidth as well as innerHeight of window.
-- Looping through the array to delete the targement element.
+- Displays list of books in table format
+- Appending list of books to table .
+- Changing the background to dark and light mode and vice-a-versa.
+- Use of BOM method back and property innerWidth as well as innerHeight of window to display windos width and height respectively.
+- Looping through the array to delete the target element.
 - Implemented HTML validations as well as javascript validations.
 - Used evenListeners a few times.
-- created a few elements.
+- Created a few elements.
 - Used HTML templating with the cloneNode method to create templated content. Used deep copy to copy template from one div to another.
 - Used textContent as well as classList properties.
 - Used form as well as input elements.
 - Program runs without errors.
+- Used the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.).
+
+## Output
+
+![alt text](/images/image.png)
