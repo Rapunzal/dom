@@ -16,7 +16,6 @@ back.addEventListener("click", goBack);
 back.classList.add("backButton");
 
 function goBack() {
-  console.log("hey");
   window.history.back();
 }
 
@@ -27,7 +26,6 @@ console.log(w);
 console.log(h);
 
 function addBook(event) {
-  console.log(event, " event");
   const titleVal = validateTitle();
   if (titleVal === false) {
     event.returnValue = false;
@@ -181,7 +179,7 @@ addTemplate();
 //Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.).
 
 const list = ["First Book", "Second Book"];
-
+defineRelationShip();
 function defineRelationShip() {
   const node = document.querySelector("#first ul");
   console.log(node);
@@ -189,5 +187,17 @@ function defineRelationShip() {
   console.log(node.lastChild, " last child");
   console.log(node.parentNode);
   console.log(node.nextElementSibling);
+  console.log(table, " table===");
+  document.getElementById("one").innerHTML =
+    table.firstChild.firstChild.textContent;
+  document.getElementById("two").innerHTML = table.lastChild.textContent;
+  document.getElementById("three").innerHTML = table.parentNode.textContent;
+  const template = document.getElementById("cloneTemplate");
+  document.getElementById("four").innerHTML =
+    form.nextElementSibling.textContent;
+  console.log(table.firstChild, " first child");
+  console.log(table.lastChild, " last child");
+  console.log(table.parentNode);
+  console.log(template.nextElementSibling);
 }
 defineRelationShip();
