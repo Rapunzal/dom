@@ -18,7 +18,7 @@
 This is a Book Keeper Project to maintain a list of books.Features of the project include:-
 
 - Creating table for list of books dynamically.
-- Displays list of books in table format
+- Displays list of books in table format created dynamically.
 - Appending list of books to table .
 - Changing the background to dark and light mode and vice-a-versa.
 - Use of BOM method back and property innerWidth as well as innerHeight of window to display windos width and height respectively.
