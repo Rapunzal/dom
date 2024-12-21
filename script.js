@@ -43,6 +43,9 @@ function addBook(event) {
   }
 
   addRowToTable(table, title.value, author.value, isbn.value);
+  title.value = "";
+  author.value = "";
+  isbn.value = "";
   event.preventDefault();
 }
 
@@ -121,6 +124,7 @@ function addRowToTable(table, title, author, isbn) {
   table.appendChild(tr);
   tr.classList.add("trclass");
   console.log(table, "add row to table");
+
   //console.log(JSON.parse(localStorage.getItem("list")));
   //del();
   return table;
