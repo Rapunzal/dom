@@ -12,3 +12,7 @@
 - HTML
 - CSS
 - Javascript
+
+## Output
+
+![alt text](/images/image.png)
